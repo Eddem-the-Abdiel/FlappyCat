@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://b253ayr7eyaie"]
+[gd_scene load_steps=3 format=3 uid="uid://b253ayr7eyaie"]
+
+[ext_resource type="Texture2D" uid="uid://dya3xfbj28es5" path="res://Pillars/Pilar.png" id="1_y64fu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdxdd"]
+size = Vector2(32, 96)
 
 [node name="Pillars" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y64fu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fdxdd")

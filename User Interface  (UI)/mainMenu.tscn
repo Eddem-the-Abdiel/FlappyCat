@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://bxy484ccuuj48"]
+[gd_scene load_steps=5 format=3 uid="uid://bxy484ccuuj48"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://User Interface  (UI)/mainMenu.gd" id="1_fmyvj"]
+[ext_resource type="Texture2D" uid="uid://nagtlnuccgls" path="res://User Interface  (UI)/GameLogo.png" id="1_ucpsi"]
+[ext_resource type="Texture2D" uid="uid://cuk00kcqu31mx" path="res://User Interface  (UI)/BotaoIniciar.png" id="2_4nwux"]
+[ext_resource type="Shortcut" path=" " id="2_ginov"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_fmyvj")
+
+[node name="CenterLogo" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterLogo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -22.0
+offset_right = 26.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ucpsi")
+
+[node name="StartButtom" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 136.0
+offset_right = 300.0
+offset_bottom = 184.0
+
+[node name="Start" type="TextureButton" parent="StartButtom"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -8.5
+offset_right = 32.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+shortcut = ExtResource("2_ginov")
+texture_normal = ExtResource("2_4nwux")
+
+[connection signal="pressed" from="StartButtom/Start" to="." method="_on_start_pressed"]
