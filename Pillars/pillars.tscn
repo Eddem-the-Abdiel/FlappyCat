@@ -1,15 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://b253ayr7eyaie"]
+[gd_scene load_steps=5 format=3 uid="uid://b253ayr7eyaie"]
 
+[ext_resource type="Script" path="res://Pillars/Pillars.gd" id="1_p0qpr"]
 [ext_resource type="Texture2D" uid="uid://dya3xfbj28es5" path="res://Pillars/Pilar.png" id="1_y64fu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdxdd"]
 size = Vector2(32, 96)
 
-[node name="Pillars" type="StaticBody2D"]
-metadata/_edit_group_ = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o8lk"]
+size = Vector2(16, 88)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PillarNode" type="Node2D"]
+
+[node name="Pillars" type="StaticBody2D" parent="."]
+script = ExtResource("1_p0qpr")
+
+[node name="LowerCollShape" type="CollisionShape2D" parent="Pillars"]
+position = Vector2(0, 88)
+shape = SubResource("RectangleShape2D_fdxdd")
+
+[node name="Lower" type="Sprite2D" parent="Pillars/LowerCollShape"]
 texture = ExtResource("1_y64fu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="UpperCollShape" type="CollisionShape2D" parent="Pillars"]
+position = Vector2(0, -88)
+rotation = 3.14159
 shape = SubResource("RectangleShape2D_fdxdd")
+
+[node name="Upper" type="Sprite2D" parent="Pillars/UpperCollShape"]
+texture = ExtResource("1_y64fu")
+
+[node name="PointArea" type="Area2D" parent="Pillars"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillars/PointArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_6o8lk")

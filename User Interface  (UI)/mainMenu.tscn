@@ -69,7 +69,7 @@ texture = ExtResource("2_rx3mh")
 position = Vector2(-60, -15)
 sprite_frames = SubResource("SpriteFrames_qh0yd")
 autoplay = "default"
-frame_progress = 0.604987
+frame_progress = 0.576746
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ConteinerCentro"]
 custom_minimum_size = Vector2(0, 178)
