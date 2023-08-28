@@ -1,15 +1,52 @@
-extends CharacterBody2D
+extends  CharacterBody2D
 
-@onready var animation = $AnimationPlayer
+class_name player
+
+@export var gravity = 900.0
+@export var jump_force = -300
+@export var rotation_speed = 2
+
+@onready var animation_player = $AnimationPlayer
+
+var max_speed = 400
+var is_started = false
+var should_process_input = true
 
 func _ready():
-	pass
+	velocity = Vector2.ZERO
+	
+func _physics_process(delta):
+	if Input.is_action_just_pressed("jump") && should_process_input:
+		if !is_started:
+			is_started = true
+		jump()
+	
+	
+	if !is_started:
+		return
+	velocity.y += gravity * delta
+	
+	velocity.y = min(velocity.y, max_speed)
+	
+	move_and_collide(velocity * delta)
+	
+	rotate_cat()
+	
+func jump():
+	velocity.y = jump_force
+	rotation = deg_to_rad(-30)
 
-func _input(event):
-	#eu errei, um animated sprite serve para poucas animações,que não envolvem 
-	#mais de uma direção
-	if event.is_action_pressed("ui_accept") == false:
-		#print("o código de Ui accept é só um teste, para ver se as animações funcionam")
-		animation.play("Idle")
-	else:
-		animation.play("Jump")
+func rotate_cat():
+	#Rodar para baixo ao cair
+	if velocity.y > 0 && rad_to_deg(rotation) < 90:
+		rotation += rotation_speed * deg_to_rad(1)
+	#Rode para cima ao cair
+	elif velocity.y < 0 && rad_to_deg(rotation) > -30:
+		rotation -= rotation_speed * deg_to_rad(1) 
+
+func stop():
+	animation_player.stop()
+	gravity = 0
+	velocity = Vector2.ZERO
+	should_process_input = false
+	

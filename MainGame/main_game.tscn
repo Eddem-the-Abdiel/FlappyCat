@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://6xkcvyolo4l2"]
+[gd_scene load_steps=6 format=3 uid="uid://6xkcvyolo4l2"]
 
 [ext_resource type="PackedScene" uid="uid://2tvhhbkna1gy" path="res://Player/player.tscn" id="1_81w2g"]
 [ext_resource type="Texture2D" uid="uid://deh6uh4hlvn4j" path="res://User Interface  (UI)/BG nuvens.png" id="1_h6ncx"]
 [ext_resource type="PackedScene" uid="uid://b253ayr7eyaie" path="res://Pillars/pillars.tscn" id="2_2h67r"]
 [ext_resource type="PackedScene" uid="uid://8grg3jf1ba3e" path="res://User Interface  (UI)/hud.tscn" id="3_n2u8r"]
+[ext_resource type="PackedScene" uid="uid://h5b7dfruqypx" path="res://terreno.tscn" id="5_pc0u8"]
 
 [node name="MainGame" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(150, 96)
+position = Vector2(119.5, 95)
+scale = Vector2(0.956667, 2.65625)
 texture = ExtResource("1_h6ncx")
+
+[node name="Player" parent="." instance=ExtResource("1_81w2g")]
+position = Vector2(120, 96)
 
 [node name="PillarNode" parent="." instance=ExtResource("2_2h67r")]
 position = Vector2(277, 92)
@@ -23,7 +28,7 @@ position = Vector2(480, 120)
 [node name="PillarNode4" parent="." instance=ExtResource("2_2h67r")]
 position = Vector2(392, 80)
 
-[node name="Player" parent="." instance=ExtResource("1_81w2g")]
-position = Vector2(120, 96)
-
 [node name="Hud" parent="." instance=ExtResource("3_n2u8r")]
+
+[node name="Terreno" parent="." instance=ExtResource("5_pc0u8")]
+position = Vector2(144, 352)
