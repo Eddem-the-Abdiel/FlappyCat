@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfr8wqs2ti0w6"]
+[gd_scene load_steps=5 format=3 uid="uid://h5b7dfruqypx"]
 
 [ext_resource type="Script" path="res://terreno.gd" id="1_0vxrg"]
 [ext_resource type="Texture2D" uid="uid://dfs0c8jsrq11e" path="res://User Interface  (UI)/ground.png" id="2_c2xmh"]

@@ -1,51 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://6xkcvyolo4l2"]
+[gd_scene load_steps=6 format=3 uid="uid://6xkcvyolo4l2"]
 
 [ext_resource type="PackedScene" uid="uid://2tvhhbkna1gy" path="res://Player/player.tscn" id="1_81w2g"]
 [ext_resource type="Texture2D" uid="uid://deh6uh4hlvn4j" path="res://User Interface  (UI)/BG nuvens.png" id="1_h6ncx"]
-[ext_resource type="Script" path="res://MainGame/main_game.gd" id="1_hrl4k"]
 [ext_resource type="PackedScene" uid="uid://b253ayr7eyaie" path="res://Pillars/pillars.tscn" id="2_2h67r"]
 [ext_resource type="PackedScene" uid="uid://8grg3jf1ba3e" path="res://User Interface  (UI)/hud.tscn" id="3_n2u8r"]
-[ext_resource type="PackedScene" path="res://terreno.tscn" id="5_pc0u8"]
+[ext_resource type="PackedScene" uid="uid://h5b7dfruqypx" path="res://terreno.tscn" id="5_pc0u8"]
 
 [node name="MainGame" type="Node2D"]
-script = ExtResource("1_hrl4k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(149.75, 96)
-scale = Vector2(0.998334, 1)
+position = Vector2(150.5, 96)
+scale = Vector2(0.996667, 1)
 texture = ExtResource("1_h6ncx")
 
 [node name="Player" parent="." instance=ExtResource("1_81w2g")]
-position = Vector2(115, 98)
+position = Vector2(120, 96)
 
 [node name="PillarNode" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(440, 95)
+position = Vector2(277, 92)
 
 [node name="PillarNode2" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(850, 86)
+position = Vector2(552, 88)
 
 [node name="PillarNode3" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(724, 115)
+position = Vector2(480, 120)
 
 [node name="PillarNode4" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(581, 85)
-
-[node name="PillarNode6" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1010, 90)
+position = Vector2(392, 80)
 
 [node name="Hud" parent="." instance=ExtResource("3_n2u8r")]
 
 [node name="Terreno" parent="." instance=ExtResource("5_pc0u8")]
-position = Vector2(323, 214)
+position = Vector2(140, 319)
 
 [node name="PillarNode5" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(293, 104)
-
-[node name="PillarNode9" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1219, 63)
-
-[node name="PillarNode8" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1320, 103)
-
-[node name="PillarNode7" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1125, 133)
+position = Vector2(219, 105)

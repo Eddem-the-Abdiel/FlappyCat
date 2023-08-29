@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://User Interface  (UI)/mainMenu.gd" id="1_fmyvj"]
 [ext_resource type="Texture2D" uid="uid://nagtlnuccgls" path="res://User Interface  (UI)/GameLogo.png" id="1_ucpsi"]
+[ext_resource type="Texture2D" uid="uid://deh6uh4hlvn4j" path="res://User Interface  (UI)/BG nuvens.png" id="2_3gt7a"]
 [ext_resource type="Texture2D" uid="uid://cuk00kcqu31mx" path="res://User Interface  (UI)/BotaoIniciar.png" id="2_4nwux"]
-[ext_resource type="Texture2D" uid="uid://cnr4ckunt0xxc" path="res://User Interface  (UI)/BG sem gato.png" id="2_rx3mh"]
 [ext_resource type="Texture2D" uid="uid://i52eibk6j3kk" path="res://Player/Animações gatinho.png" id="3_tnwwm"]
 [ext_resource type="Texture2D" uid="uid://dht7c5l5fh3gp" path="res://User Interface  (UI)/BotaoQuit.png" id="4_evfyn"]
 
@@ -63,7 +63,7 @@ pivot_offset = Vector2(0, 20)
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/ConteinerCentro"]
 position = Vector2(150, 96)
-texture = ExtResource("2_rx3mh")
+texture = ExtResource("2_3gt7a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/ConteinerCentro/Sprite2D"]
 position = Vector2(-60, -15)

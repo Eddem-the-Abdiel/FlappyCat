@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8grg3jf1ba3e"]
+[gd_scene load_steps=6 format=3 uid="uid://8grg3jf1ba3e"]
 
+[ext_resource type="Script" path="res://User Interface  (UI)/Score.gd" id="1_1we51"]
 [ext_resource type="Texture2D" uid="uid://sw0e5jk28rpk" path="res://User Interface  (UI)/PauseButtom.png" id="1_e8y26"]
+[ext_resource type="Script" path="res://User Interface  (UI)/Control.gd" id="1_kk8dx"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_1av17"]
 device = -1
@@ -19,8 +21,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(32, 0)
+script = ExtResource("1_kk8dx")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="Score" type="RichTextLabel" parent="Control"]
 layout_mode = 2
 offset_left = 248.0
 offset_top = 16.0
@@ -29,6 +32,7 @@ offset_bottom = 40.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 text = "0"
+script = ExtResource("1_1we51")
 
 [node name="TextureButton" type="TextureButton" parent="Control"]
 layout_mode = 0
