@@ -5,10 +5,11 @@
 [ext_resource type="Script" path="res://MainGame/main_game.gd" id="1_hrl4k"]
 [ext_resource type="PackedScene" uid="uid://b253ayr7eyaie" path="res://Pillars/pillars.tscn" id="2_2h67r"]
 [ext_resource type="PackedScene" uid="uid://8grg3jf1ba3e" path="res://User Interface  (UI)/hud.tscn" id="3_n2u8r"]
-[ext_resource type="PackedScene" path="res://terreno.tscn" id="5_pc0u8"]
+[ext_resource type="PackedScene" uid="uid://bfr8wqs2ti0w6" path="res://terreno.tscn" id="5_pc0u8"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_hrl4k")
+metadata/_edit_horizontal_guides_ = [288.0, 193.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(149.75, 96)
@@ -16,22 +17,13 @@ scale = Vector2(0.998334, 1)
 texture = ExtResource("1_h6ncx")
 
 [node name="Player" parent="." instance=ExtResource("1_81w2g")]
-position = Vector2(115, 98)
+position = Vector2(124, 96)
 
 [node name="PillarNode" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(440, 95)
-
-[node name="PillarNode2" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(850, 86)
-
-[node name="PillarNode3" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(724, 115)
+position = Vector2(441, 130)
 
 [node name="PillarNode4" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(581, 85)
-
-[node name="PillarNode6" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1010, 90)
+position = Vector2(597, 100)
 
 [node name="Hud" parent="." instance=ExtResource("3_n2u8r")]
 
@@ -39,13 +31,4 @@ position = Vector2(1010, 90)
 position = Vector2(323, 214)
 
 [node name="PillarNode5" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(293, 104)
-
-[node name="PillarNode9" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1219, 63)
-
-[node name="PillarNode8" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1320, 103)
-
-[node name="PillarNode7" parent="." instance=ExtResource("2_2h67r")]
-position = Vector2(1125, 133)
+position = Vector2(278, 96)

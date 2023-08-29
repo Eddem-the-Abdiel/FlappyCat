@@ -10,6 +10,7 @@ class_name player
 var max_speed = 400
 var is_started = true
 var should_process_input = true
+var pillar = preload("res://Pillars/pillars.tscn")
 
 func ready():
 	velocity = Vector2(0,0)
@@ -52,6 +53,13 @@ func catLoses():
 	should_process_input = false
 	$Timer.start()
 	print("timer iniciou")
+	
+func pillarReset():
+	var pillarInstance = pillar.instantiate()
+	pillarInstance.position = Vector2(500, randf_range(60,120))
+	get_parent().call_deferred("add_child", pillarInstance)
+
+
 
 
 
@@ -76,3 +84,10 @@ func _on_area_2d_area_entered(area):
 func _on_timer_timeout():
 	print("acabou-se")
 	get_tree().change_scene_to_file("res://User Interface  (UI)/mainMenu.tscn")
+
+
+func _on_resetter_body_entered(body):
+	if body.name == "Pillars":
+		print("é uma pilar")
+		body.queue_free()
+		pillarReset()
